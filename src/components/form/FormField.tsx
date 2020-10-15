@@ -1,6 +1,7 @@
 import * as React from 'react';
+import {Input} from '../shared';
 import {FormCtx} from './Form';
-import {FieldProps, FormContext} from './FormTypes';
+import {FieldProps, FormContext, InputType} from './FormTypes';
 
 export const FormField: React.FunctionComponent<FieldProps> = props => {
   const {name, label, type, options} = props;
@@ -34,23 +35,25 @@ export const FormField: React.FunctionComponent<FieldProps> = props => {
       {context => (
         <div className="form-group">
           <label htmlFor={name}>{label}</label>
-          {(type === 'Text' || type === 'Email' || type === 'Password') && (
-            <input
-              type={type?.toLowerCase()}
+          {(type === InputType.Text ||
+            type === InputType.Email ||
+            type === InputType.Password) && (
+            <Input
+              type={type}
               id={name}
               value={context.values[name]}
               onChange={e => handleChange(e, context)}
               onBlur={e => handleBlur(e, context)}
             />
           )}
-          {type === 'TextArea' && (
+          {type === InputType.TextArea && (
             <textarea
               id={name}
               value={context.values[name]}
               onChange={e => handleChange(e, context)}
               onBlur={e => handleBlur(e, context)}></textarea>
           )}
-          {type === 'Select' && (
+          {type === InputType.Select && (
             <select
               id={name}
               value={context.values[name]}

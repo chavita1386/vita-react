@@ -2,7 +2,7 @@ import React, {FunctionComponent, useState} from 'react';
 import {useHistory} from 'react-router-dom';
 import {useLoginMutation} from '../../api/graphql/mutations/login';
 import {Form, minLength, required} from '../form';
-import {SubmitResult, Values} from '../form/FormTypes';
+import {InputType, SubmitResult, Values} from '../form/FormTypes';
 
 const LoginForm: FunctionComponent<{}> = () => {
   let history = useHistory();
@@ -41,8 +41,12 @@ const LoginForm: FunctionComponent<{}> = () => {
           password: [{validator: required}, {validator: minLength, arg: 3}],
         }}
         onSubmit={handleSubmit}>
-        <Form.Field name="email" label="Email" type="Text" />
-        <Form.Field name="password" label="Password" type="Password" />
+        <Form.Field name="email" label="Email" type={InputType.Email} />
+        <Form.Field
+          name="password"
+          label="Password"
+          type={InputType.Password}
+        />
       </Form>
     </div>
   );

@@ -31,10 +31,18 @@ export interface SubmitResult {
  * Form field
  * */
 
+export enum InputType {
+  Text = 'text',
+  Password = 'password',
+  Email = 'email',
+  TextArea = 'texarea',
+  Select = 'select',
+}
+
 export interface FieldProps {
   name: string;
   label: string;
-  type?: 'Text' | 'Email' | 'Select' | 'TextArea' | 'Password';
+  type?: InputType;
   options?: string[];
 }
 
