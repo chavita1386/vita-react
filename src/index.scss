@@ -1,0 +1,36 @@
+:root {
+  --font-primary: #333;
+  --font-secondary: #555;
+
+  --color-primary: #ca895f;
+  --color-secondary: #e3d26f;
+  --color-third: #a15e49;
+
+  --color-gray-1: #444;
+  --color-gray-2: #aaa;
+  --color-gray-3: #eeeceb;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 14px;
+}
+
+body {
+  font-family: 'Sora', sans-serif;
+  color: var(--font-primary);
+}
+
+img {
+  max-width: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: var(--color-primary);
+  font-weight: 400;
+}

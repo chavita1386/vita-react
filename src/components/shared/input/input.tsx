@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import {Button} from '..';
 import {InputType} from '../../form/FormTypes';
 import './input.scss';
 
@@ -30,9 +31,12 @@ const Input: React.FC<Props> = props => {
         className="input"
       />
       {type === InputType.Password && (
-        <button onClick={handleShowPassword}>
-          {showPassword ? 'Hide password' : 'Show password'}
-        </button>
+        <Button
+          id={`button${id.toUpperCase()}`}
+          label={showPassword ? 'Hide password' : 'Show password'}
+          style="link"
+          onClick={handleShowPassword}
+        />
       )}
     </React.Fragment>
   );

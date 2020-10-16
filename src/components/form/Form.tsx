@@ -8,6 +8,7 @@ import {
   SubmitResult,
 } from './FormTypes';
 import {FormField} from './FormField';
+import {Button} from '../shared';
 
 interface Props {
   defaultValues: Values;
@@ -112,11 +113,12 @@ export default class Form extends React.Component<Props, State> {
           onSubmit={this.handleSubmit}>
           {this.props.children}
           <div className="form-group">
-            <button
+            <Button
+              id="buttonForm"
               type="submit"
-              disabled={this.state.submitting || this.state.submitted}>
-              Submit
-            </button>
+              style="primary"
+              label="Sign in"
+            />
           </div>
         </form>
       </FormCtx.Provider>
