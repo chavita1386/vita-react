@@ -1,0 +1,13 @@
+.badge {
+  font-size: 0.7rem;
+  background-color: var(--color-gray-2);
+  padding: 0.1rem 0.5rem;
+  display: inline-block;
+  color: white;
+  border-radius: 0.3rem;
+  line-height: 1.6;
+
+  &--primary {
+    background-color: var(--color-primary);
+  }
+}

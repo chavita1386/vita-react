@@ -1,7 +1,7 @@
-import React, {useState} from 'react';
-import {Button} from '..';
-import {InputType} from '../../form/FormTypes';
-import './input.scss';
+import React, { useState } from "react";
+import { Button } from "..";
+import { InputType } from "../../Form/FormTypes";
+import "./input.scss";
 
 interface Props {
   id: string;
@@ -11,19 +11,19 @@ interface Props {
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => any;
   onBlur?: (e: React.ChangeEvent<HTMLInputElement>) => any;
 }
-const Input: React.FC<Props> = props => {
-  const {id, name, type, value, onChange, onBlur} = props;
+const Input: React.FC<Props> = (props) => {
+  const { id, name, type, value, onChange, onBlur } = props;
   const [showPassword, setShowPassword] = useState<boolean>(false);
 
   const handleShowPassword = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
-    setShowPassword(prev => !prev);
+    setShowPassword((prev) => !prev);
   };
   return (
-    <div className={type === InputType.Password ? 'input__password' : 'full'}>
+    <div className={type === InputType.Password ? "input__password" : "full"}>
       <input
         id={id}
-        type={showPassword ? 'text' : type}
+        type={showPassword ? "text" : type}
         value={value}
         placeholder={name}
         onChange={onChange}
@@ -35,8 +35,9 @@ const Input: React.FC<Props> = props => {
           id={`button${id.toUpperCase()}`}
           label=""
           variant="link"
-          onClick={handleShowPassword}>
-          <i className={showPassword ? 'far fa-eye-slash' : 'far fa-eye'}></i>
+          onClick={handleShowPassword}
+        >
+          <i className={showPassword ? "far fa-eye-slash" : "far fa-eye"}></i>
         </Button>
       )}
     </div>

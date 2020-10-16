@@ -1,0 +1,66 @@
+.sidebar {
+  height: 100vh;
+
+  &--admin {
+    padding: 1rem;
+  }
+
+  &__wrapper {
+    box-shadow: 10px 7px 18px -7px var(--color-gray-3);
+    padding: 1rem 1.5rem;
+    height: 100%;
+    border-radius: 25px;
+  }
+
+  &__header {
+    margin: 0 0 1.7rem 0;
+  }
+
+  &__title {
+    color: var(--color-primary);
+    text-transform: uppercase;
+  }
+
+  &__user {
+    margin: 1rem 0 3.5rem 0;
+    padding: 1rem 0.7rem;
+    border-radius: 12px;
+    border: 1px solid var(--color-gray-2);
+  }
+
+  .menu {
+    &__item {
+      margin: 1.6rem 0;
+
+      .link {
+        padding: 0.5rem 0.7rem;
+      }
+    }
+  }
+}
+
+.user-profile {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &__info {
+    margin-left: 0;
+    display: flex;
+    align-items: center;
+
+    & img {
+      width: 28px;
+      height: 28px;
+    }
+  }
+
+  &__personal {
+    margin: 0 0 0 0.9rem;
+  }
+
+  &__name {
+    font-size: 0.9rem;
+    line-height: 1.8;
+  }
+}
