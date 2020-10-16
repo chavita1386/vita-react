@@ -20,25 +20,26 @@ const Input: React.FC<Props> = props => {
     setShowPassword(prev => !prev);
   };
   return (
-    <React.Fragment>
+    <div className={type === InputType.Password ? 'input__password' : 'full'}>
       <input
-        type={showPassword ? 'text' : type}
-        onChange={onChange}
-        onBlur={onBlur}
         id={id}
+        type={showPassword ? 'text' : type}
         value={value}
         placeholder={name}
+        onChange={onChange}
+        onBlur={onBlur}
         className="input"
       />
       {type === InputType.Password && (
         <Button
           id={`button${id.toUpperCase()}`}
-          label={showPassword ? 'Hide password' : 'Show password'}
-          style="link"
-          onClick={handleShowPassword}
-        />
+          label=""
+          variant="link"
+          onClick={handleShowPassword}>
+          <i className={showPassword ? 'far fa-eye-slash' : 'far fa-eye'}></i>
+        </Button>
       )}
-    </React.Fragment>
+    </div>
   );
 };
 

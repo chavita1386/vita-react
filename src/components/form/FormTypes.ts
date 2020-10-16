@@ -40,6 +40,7 @@ export enum InputType {
 }
 
 export interface FieldProps {
+  id: string;
   name: string;
   label: string;
   type?: InputType;

@@ -7,7 +7,7 @@ export const required: Validator = (
 ): string => {
   const value = values[fieldName];
   return value === undefined || value === null || value === ''
-    ? `Field ${fieldName} must be populated`
+    ? `Field ${fieldName} is required`
     : '';
 };
 

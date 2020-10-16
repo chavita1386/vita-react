@@ -1,0 +1,36 @@
+.login-form {
+  border: 1px solid var(--color-gray-3);
+  border-radius: 0.3rem;
+  padding: 2rem 3rem;
+  box-shadow: 2px 2px 5px var(--color-gray-3);
+  min-width: 400px;
+
+  .title {
+    margin: 2rem 0;
+    font-size: 1.4rem;
+
+    .branch {
+      color: var(--color-primary);
+      font-size: 1.5rem;
+    }
+  }
+
+  .form-group {
+    display: grid;
+    grid-gap: 0.5rem;
+
+    label {
+      color: var(--color-gray-1);
+      padding: 1rem 0 0.3rem;
+    }
+
+    button[type='submit'] {
+      margin: 2.5rem 0 1rem;
+    }
+
+    .form-error {
+      color: var(--color-danger);
+      font-size: 0.9rem;
+    }
+  }
+}

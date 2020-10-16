@@ -5,18 +5,24 @@ interface Props {
   id: string;
   label: string;
   type?: 'submit' | 'reset' | 'button';
-  style?: string;
+  variant?: string;
   onClick?: (e: React.MouseEvent<HTMLButtonElement>) => void;
 }
 const Button: React.FC<Props> = props => {
-  const {id, label, type = 'button', style = 'primary', onClick} = props;
+  const {
+    id,
+    label,
+    type = 'button',
+    variant: style = 'primary',
+    onClick,
+  } = props;
   return (
     <button
       id={id}
       type={type}
       className={`button button--${style}`}
       onClick={onClick}>
-      {label}
+      {label !== '' ? label : props.children}
     </button>
   );
 };

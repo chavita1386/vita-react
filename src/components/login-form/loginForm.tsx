@@ -1,8 +1,9 @@
 import React, {FunctionComponent, useState} from 'react';
 import {useHistory} from 'react-router-dom';
 import {useLoginMutation} from '../../api/graphql/mutations/login';
-import {Form, minLength, required} from '../form';
+import {Form, required} from '../form';
 import {InputType, SubmitResult, Values} from '../form/FormTypes';
+import './loginForm.scss';
 
 const LoginForm: FunctionComponent<{}> = () => {
   let history = useHistory();
@@ -31,23 +32,32 @@ const LoginForm: FunctionComponent<{}> = () => {
   };
 
   return (
-    <div className="login wrapper">
-      {error && <span className="label label--error">{error}</span>}
-      <h1>Login</h1>
+    <div className="login-form">
+      <h2 className="title">
+        Sign in <span className="branch">Vita Restaurant</span>
+      </h2>
       <Form
+        id="login"
         defaultValues={{email: '', password: ''}}
         validationRules={{
           email: {validator: required},
-          password: [{validator: required}, {validator: minLength, arg: 3}],
+          password: {validator: required},
         }}
         onSubmit={handleSubmit}>
-        <Form.Field name="email" label="Email" type={InputType.Email} />
         <Form.Field
+          id="usernameText"
+          name="email"
+          label="Email"
+          type={InputType.Email}
+        />
+        <Form.Field
+          id="passwordText"
           name="password"
           label="Password"
           type={InputType.Password}
         />
       </Form>
+      {error && <span className="message message--error">{error}</span>}
     </div>
   );
 };

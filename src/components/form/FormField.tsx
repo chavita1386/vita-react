@@ -4,7 +4,7 @@ import {FormCtx} from './Form';
 import {FieldProps, FormContext, InputType} from './FormTypes';
 
 export const FormField: React.FunctionComponent<FieldProps> = props => {
-  const {name, label, type, options} = props;
+  const {id = props.name, name, label, type, options} = props;
 
   const handleChange = (
     e:
@@ -40,7 +40,8 @@ export const FormField: React.FunctionComponent<FieldProps> = props => {
             type === InputType.Password) && (
             <Input
               type={type}
-              id={name}
+              id={id}
+              name={name}
               value={context.values[name]}
               onChange={e => handleChange(e, context)}
               onBlur={e => handleBlur(e, context)}

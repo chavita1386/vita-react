@@ -1,7 +1,27 @@
+.full {
+  width: 100%;
+
+  .input {
+    width: 100%;
+  }
+}
+
+.input__password {
+  position: relative;
+  .input {
+    width: 100%;
+  }
+  button {
+    position: absolute;
+    right: 0;
+  }
+}
+
 .input {
   border: 1px solid #e1e1e1;
   padding: 0.5rem;
-  border-radius: 0.5rem;
-  margin: 0.2rem 0.5rem;
+  border-radius: 0.3rem;
+  margin: 0.2rem 0rem;
   color: var(--font-primary);
+  position: relative;
 }

@@ -11,6 +11,7 @@ import {FormField} from './FormField';
 import {Button} from '../shared';
 
 interface Props {
+  id?: string;
   defaultValues: Values;
   validationRules: ValidationProp;
   onSubmit: (values: Values) => Promise<SubmitResult>;
@@ -108,6 +109,7 @@ export default class Form extends React.Component<Props, State> {
     return (
       <FormCtx.Provider value={context}>
         <form
+          id={this.props.id}
           className="form form--login"
           noValidate={true}
           onSubmit={this.handleSubmit}>
@@ -116,7 +118,7 @@ export default class Form extends React.Component<Props, State> {
             <Button
               id="buttonForm"
               type="submit"
-              style="primary"
+              variant="primary"
               label="Sign in"
             />
           </div>
