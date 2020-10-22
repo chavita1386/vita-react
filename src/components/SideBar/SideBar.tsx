@@ -1,36 +1,36 @@
-import * as React from "react";
-import { UserCtx } from "../../pages/AdminPage";
-import { Link } from "../shared";
-import "./SideBar.scss";
-import SideBarProfile from "./SideBarProfile";
+import * as React from 'react';
+import {UserCtx} from '../../pages/AdminPage';
+import {Link} from '../shared';
+import './SideBar.scss';
+import SideBarProfile from './SideBarProfile';
 
 const menus = [
   {
-    label: "Home",
-    imageUrl: "./assets/icons/home.svg",
-    to: "/admin",
+    label: 'Home',
+    imageUrl: '/assets/icons/home.svg',
+    to: '/admin',
   },
   {
-    label: "Plates",
-    imageUrl: "./assets/icons/plate.svg",
-    to: "/admin/plates",
+    label: 'Plates',
+    imageUrl: '/assets/icons/plate.svg',
+    to: '/admin/plates',
   },
   {
-    label: "Stews",
-    imageUrl: "./assets/icons/stew.svg",
-    to: "/admin/stews",
+    label: 'Stews',
+    imageUrl: '/assets/icons/stew.svg',
+    to: '/admin/stews',
   },
   {
-    label: "Ingredients",
-    imageUrl: "./assets/icons/ingredient.svg",
-    to: "/admin/ingredients",
+    label: 'Ingredients',
+    imageUrl: '/assets/icons/ingredient.svg',
+    to: '/admin/ingredients',
   },
 ];
 
 const SideBar = () => {
   return (
     <UserCtx.Consumer>
-      {(user) => (
+      {user => (
         <div className="sidebar sidebar--admin">
           <div className="sidebar__wrapper">
             <div className="sidebar__header">
@@ -44,7 +44,7 @@ const SideBar = () => {
             </div>
             <div className="sidebar__menu">
               <div className="menu menu--admin">
-                {menus.map((menu) => (
+                {menus.map(menu => (
                   <div key={menu.to} className="menu__item">
                     <Link
                       to={menu.to}

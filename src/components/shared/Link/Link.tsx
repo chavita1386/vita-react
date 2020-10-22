@@ -1,6 +1,6 @@
-import * as React from "react";
-import { NavLink } from "react-router-dom";
-import "./Link.scss";
+import * as React from 'react';
+import {NavLink} from 'react-router-dom';
+import './Link.scss';
 
 interface Props {
   to: string;
@@ -8,14 +8,14 @@ interface Props {
   imageUrl?: string;
 }
 
-const Link: React.FunctionComponent<Props> = (props) => {
-  const { to, label, imageUrl = null } = props;
+const Link: React.FunctionComponent<Props> = props => {
+  const {to, label, imageUrl = null} = props;
   return (
     <NavLink
       to={to}
-      className={`link ${imageUrl ? "link--icon" : ""}`}
       activeClassName="active"
-    >
+      exact
+      className={`link ${imageUrl ? 'link--icon' : ''}`}>
       {imageUrl && (
         <img src={imageUrl} alt={label.toLowerCase()} className="icon" />
       )}

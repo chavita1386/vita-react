@@ -1,3 +1,4 @@
 import User from './User';
+import Plate from './Plate';
 
-export type { User };
+export type {User, Plate};

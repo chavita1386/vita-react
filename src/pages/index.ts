@@ -1,4 +1,5 @@
 import AdminPage from './AdminPage';
 import LoginPage from './LoginPage';
+import AdminPlates from './AdminPlates';
 
-export {AdminPage, LoginPage};
+export {AdminPage, LoginPage, AdminPlates};
